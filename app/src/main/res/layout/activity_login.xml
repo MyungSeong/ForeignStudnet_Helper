@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:background="?attr/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/toolbar_login_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/toolbar_login" />
+
+        <TextView
+            android:id="@+id/toolbar_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="로그인"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/logo_2_1" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp">
+
+        <EditText
+            android:id="@+id/login_username"
+            android:layout_width="185dp"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/login_pw"
+            android:background="@drawable/border"
+            android:hint="Username"
+            android:paddingLeft="12dp"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/login_pw"
+            android:layout_width="185dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/login_username"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/border"
+            android:hint="password"
+            android:paddingLeft="12dp"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/login_pw"
+            android:layout_alignTop="@+id/login_username"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/login_username"
+            android:background="@color/colorPrimaryDark"
+            android:text="Login"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp">
+
+        <Button
+            android:id="@+id/sign_up"
+            android:layout_width="215dp"
+            android:layout_height="40dp"
+            android:background="@drawable/border"
+            android:elevation="0dp"
+            android:text="회원가입 하기"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/naver"
+            android:layout_width="215dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/sign_up"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/naver" />
+
+        <Button
+            android:id="@+id/google"
+            android:layout_width="215dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/naver"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/google" />
+
+    </RelativeLayout>
+</RelativeLayout>
