@@ -12,7 +12,7 @@ public class RegisterActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up1);
-
+        
         Button tooolbar_back = (Button) findViewById(R.id.toobar_back);
         tooolbar_back.setOnClickListener(new View.OnClickListener() {
             @Override
