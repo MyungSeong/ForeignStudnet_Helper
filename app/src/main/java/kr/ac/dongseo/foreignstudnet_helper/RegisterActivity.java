@@ -1,9 +1,9 @@
 package kr.ac.dongseo.foreignstudnet_helper;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -15,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegisterActivity extends AppCompatActivity
+public class RegisterActivity extends Activity
 {
     String userEmail;
     String userPassword;
@@ -23,15 +23,15 @@ public class RegisterActivity extends AppCompatActivity
     String userLanguage;
     Integer userIsHelper;
 
-    final EditText etEmail = (EditText) findViewById(R.id.user_Email);
-    final EditText etPassword = (EditText) findViewById(R.id.user_passWord);
-    final EditText etPasswordConfirm = (EditText) findViewById(R.id.user_passWordAgain);
-    final CheckBox chkHelper = (CheckBox) findViewById(R.id.chkHelper);
+    EditText etEmail;
+    EditText etPassword;
+    EditText etPasswordConfirm;
+    CheckBox chkHelper;
 
-    Spinner spCountry = (Spinner) findViewById(R.id.spinner_Country);
-    Spinner spLanguage = (Spinner) findViewById(R.id.spinner_Language);
+    Spinner spCountry;
+    Spinner spLanguage;
 
-    final CheckBox cbAgree = (CheckBox) findViewById(R.id.personalInfo);
+    CheckBox cbAgree = (CheckBox) findViewById(R.id.personalInfo);
     Button btnOK = (Button) findViewById(R.id.btn_agreeJoin);
 
     final String[] country = { "South Korea", "USA", "China" };
@@ -41,6 +41,17 @@ public class RegisterActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        etEmail = (EditText) findViewById(R.id.user_Email);
+        etPassword = (EditText) findViewById(R.id.user_passWord);
+        etPasswordConfirm = (EditText) findViewById(R.id.user_passWordAgain);
+        chkHelper = (CheckBox) findViewById(R.id.chkHelper);
+
+        spCountry = (Spinner) findViewById(R.id.spinner_Country);
+        spLanguage = (Spinner) findViewById(R.id.spinner_Language);
+
+        cbAgree = (CheckBox) findViewById(R.id.personalInfo);
+        btnOK = (Button) findViewById(R.id.btn_agreeJoin);
 
         etPassword.addTextChangedListener(new TextWatcher() {
             @Override

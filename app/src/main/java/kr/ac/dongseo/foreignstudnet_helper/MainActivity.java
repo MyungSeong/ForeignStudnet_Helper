@@ -2,6 +2,7 @@ package kr.ac.dongseo.foreignstudnet_helper;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends Activity implements OnMapReadyCallback {
+    private ListView mListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,31 +45,34 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
 
         // Tab3 Setting
         TabSpec tabSpec3 = tabHost.newTabSpec("Tab3");
-        tabSpec3.setIndicator("테스트"); // Tab Subject
+        tabSpec3.setIndicator("도움 요청 확인"); // Tab Subject
         tabSpec3.setContent(R.id.tab_view3); // Tab Content
         tabHost.addTab(tabSpec3);
 
         tabHost.setCurrentTab(0);
 
-        // 첫번째 탭
+        /* 첫 번째 탭
+         *
+         * 도움 요청 내용
+         * http://mailmail.tistory.com/6
+         */
+        mListView = (ListView) findViewById(R.id.matchingSearch_listItem);
+        dataSettings();
+
+        /* 두번째 탭
+         *
+         * 도우미 리스트 내용
+         */
         FragmentManager fragmentManager = getFragmentManager();
         MapFragment mapFragment = (MapFragment)fragmentManager
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        // 두번째 탭
-        // http://mailmail.tistory.com/6
-        ListView mListView = (ListView) findViewById(R.id.matchingRequest_listView);
-        dataSettings();
+        /* 세번째 탭
+         *
+         * 도움 요청 확인 내용
+         */
 
-        Button btnListViewTest = (Button) findViewById(R.id.btnListViewTest);
-        btnListViewTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(), MatchingRequestActivity.class);
-                startActivity(i);
-            }
-        });
     }
 
     private void dataSettings()
@@ -76,13 +82,15 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
         for (int i = 0; i < 10; i++)
         {
             mMyAdapter.addItem(ContextCompat.getDrawable(
-                    getApplicationContext(), R.drawable.ic_launcher_background),
-                    "name_" + i, "contents_" + i);
+                    getApplicationContext(), R.drawable.dummy_profile),
+                    "Sundar Pichai_" + i, "I need help with public affairs");
         }
+
+        mListView.setAdapter(mMyAdapter);
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(final GoogleMap googleMap) {
         LatLng SEOUL = new LatLng(37.56, 126.97);
 
         MarkerOptions markerOptions = new MarkerOptions();
