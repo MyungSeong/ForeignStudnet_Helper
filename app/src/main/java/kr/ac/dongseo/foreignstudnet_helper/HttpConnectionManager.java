@@ -1,12 +1,21 @@
 package kr.ac.dongseo.foreignstudnet_helper;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayInputStream;
+import java.io.UnsupportedEncodingException;
+
+import cz.msebera.android.httpclient.HttpClientConnection;
+import cz.msebera.android.httpclient.client.HttpClient;
+import cz.msebera.android.httpclient.entity.StringEntity;
 
 public class HttpConnectionManager
 {
@@ -19,16 +28,26 @@ public class HttpConnectionManager
     public HttpConnectionManager(Context context) {
         this.context = context;
         smgr = new SessionManager(context);
+        client.setTimeout(50000);
     }
 
     //POST 로그인
-    public void login(String mail, String pw, JsonHttpResponseHandler handler) {
-        RequestParams params = new RequestParams();
+    public void login(String mail, String pw, JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonParams = new JSONObject();
+        jsonParams.put("mail", mail);
+        jsonParams.put("pw", pw);
+        String loginURL = SERVER_URL + "/login";
+        StringEntity entity = new StringEntity(jsonParams.toString());
+        client.post(context, loginURL, entity, "application/json", handler);
+        Log.d("Request Msg: ", "JSON " + jsonParams);
+
+        /*RequestParams params = new RequestParams();
         params.put("mail", mail);
-        params.put("password", pw);
+        params.put("pw", pw);
         String loginURL = SERVER_URL + "/login";
         client.setCookieStore(smgr.myCookies);
         client.post(loginURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);*/
     }
 
     //POST 회원가입
@@ -37,7 +56,7 @@ public class HttpConnectionManager
                        JsonHttpResponseHandler handler) {
         RequestParams params = new RequestParams();
         params.put("mail", mail);
-        params.put("password", pw);
+        params.put("pw", pw);
         params.put("name", name);
         params.put("phone", phone);
         params.put("country", country);
@@ -57,6 +76,7 @@ public class HttpConnectionManager
 
         String registerURL = SERVER_URL + "/register";
         client.post(registerURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }
 
     // GET 유저 정보 가져오기, using only cookies
@@ -64,6 +84,7 @@ public class HttpConnectionManager
         String getInfoURL = SERVER_URL + "/getUserInfo";
         client.setCookieStore(smgr.myCookies);
         client.get(getInfoURL, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }*/
 
     // POST 유저 검색
@@ -73,6 +94,7 @@ public class HttpConnectionManager
         client.setCookieStore(smgr.myCookies);
         String searchUserURL = SERVER_URL + "//searchUserDetails";
         client.post(searchUserURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }*/
 
     // POST 유저 정보 업데이트 및 프로필 사진
@@ -94,6 +116,7 @@ public class HttpConnectionManager
         client.setCookieStore(smgr.myCookies);
         String updateUserInfoURL = SERVER_URL + "/updateUserInfo";
         client.post(updateUserInfoURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }*/
 
     /*
@@ -110,6 +133,7 @@ public class HttpConnectionManager
         client.setCookieStore(smgr.myCookies);
         String requestMatchURL = SERVER_URL + "/reqmatch";
         client.post(requestMatchURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }
 
     // GET 현재 유저의 매치 정보 수신 (using mail)
@@ -119,6 +143,7 @@ public class HttpConnectionManager
         String getUserMatchURL = SERVER_URL + "/mylist";
         client.setCookieStore(smgr.myCookies);
         client.get(getUserMatchURL, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }
 
     // GET 모든 대기중인 매칭 리스트 수신
@@ -127,6 +152,7 @@ public class HttpConnectionManager
         String getAllMatchURL = SERVER_URL + "/list";
         client.setCookieStore(smgr.myCookies);
         client.get(getAllMatchURL, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }
 
     // POST 매칭 종료 (헬퍼가 매칭 종료)
@@ -138,6 +164,7 @@ public class HttpConnectionManager
         String quitMatchURL = SERVER_URL + "/endmatch";
         client.setCookieStore(smgr.myCookies);
         client.post(quitMatchURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }
 
     // POST 매칭 결정 (수락 / 거절)
@@ -148,6 +175,7 @@ public class HttpConnectionManager
         String decideMatchURL = SERVER_URL + "/resmatch";
         client.setCookieStore(smgr.myCookies);
         client.post(decideMatchURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }
 
     /*
@@ -163,5 +191,6 @@ public class HttpConnectionManager
         String getProfPicURL = SERVER_URL + "/getProfileImage";
         client.setCookieStore(smgr.myCookies);
         client.get(getProfPicURL, params, handler);
+        Log.d("Request Msg: ", "JSON " + params);
     }*/
 }

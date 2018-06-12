@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/main_background"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/include_apptitle_noslide"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="5.0dip">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="90.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="90.0dip"
+                    android:layout_height="90.0dip"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/profile_userimg"
+                        android:layout_width="70.0dip"
+                        android:layout_height="70.0dip"
+                        android:scaleType="fitXY" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="5.0dip">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profile_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="name"
+                            android:textColor="#ffffffff"
+                            android:textSize="22.0dip" />
+
+                        <TextView
+                            android:id="@+id/profile_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ID"
+                            android:textColor="#ffffffff"
+                            android:textSize="18.0dip" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10.0dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30.0dip"
+                android:background="@drawable/join_back_box"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15.0dip"
+                    android:text="계정설정"
+                    android:textColor="#ff5d5d5d" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_password"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="@drawable/join_back_box"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:padding="10.0dip"
+                    android:text="암호변경"
+                    android:textSize="18.0dip" />
+
+                <Button
+                    android:layout_width="25.0dip"
+                    android:layout_height="30.0dip"
+                    android:background="@drawable/arrow_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10.0dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30.0dip"
+                android:background="@drawable/join_back_box"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15.0dip"
+                    android:text="프로필정보"
+                    android:textColor="#ff5d5d5d" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_userinfo"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="@drawable/join_back_box"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:padding="10.0dip"
+                    android:text="기본정보"
+                    android:textSize="18.0dip" />
+
+                <Button
+                    android:layout_width="25.0dip"
+                    android:layout_height="30.0dip"
+                    android:background="@drawable/arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_img"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="@drawable/join_back_box"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:padding="10.0dip"
+                    android:text="사진정보"
+                    android:textSize="18.0dip" />
+
+                <Button
+                    android:layout_width="25.0dip"
+                    android:layout_height="30.0dip"
+                    android:background="@drawable/arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_combo"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="@drawable/join_back_box"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:padding="10.0dip"
+                    android:text="관심사"
+                    android:textSize="18.0dip" />
+
+                <Button
+                    android:layout_width="25.0dip"
+                    android:layout_height="30.0dip"
+                    android:background="@drawable/arrow_right" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

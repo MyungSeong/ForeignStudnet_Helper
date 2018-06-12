@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="50.0dip">
+
+    <LinearLayout
+        android:id="@+id/item_view_true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="250.0dip">
+
+            <ImageView
+                android:id="@+id/item_true_img"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/item_true_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10.0dip"
+                android:paddingTop="5.0dip"
+                android:text="TITLE" />
+
+            <LinearLayout
+                android:id="@+id/item_true_agearea"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_true_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="AGE" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / " />
+
+                <TextView
+                    android:id="@+id/item_true_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="AREA" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/item_true_nic"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/item_true_agearea"
+                android:layout_alignLeft="@+id/item_true_agearea"
+                android:layout_marginBottom="10.0dip"
+                android:gravity="center_horizontal"
+                android:text="NICNAME" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="20.0dip">
+
+            <ImageView
+                android:id="@+id/item_true_ok"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:background="@drawable/ico_check" />
+
+            <View
+                android:layout_width="30.0dip"
+                android:layout_height="0.0dip" />
+
+            <ImageView
+                android:id="@+id/item_true_cancle"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:background="@drawable/ico_cancle" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_view_false"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item_false_card"
+            android:layout_width="250.0dip"
+            android:layout_height="250.0dip"
+            android:background="@drawable/card_matching" />
+    </LinearLayout>
+</LinearLayout>

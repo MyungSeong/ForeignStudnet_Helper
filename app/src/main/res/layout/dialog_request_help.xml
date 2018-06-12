@@ -16,14 +16,6 @@
             android:layout_width="fill_parent"
             android:layout_height="250.0dip">
 
-            <ImageView
-                android:id="@+id/item_true_img"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/dummy_profile"
-                android:scaleType="fitXY" />
-
             <TextView
                 android:id="@+id/item_true_title"
                 android:layout_width="fill_parent"
@@ -31,7 +23,18 @@
                 android:gravity="center"
                 android:paddingLeft="10.0dip"
                 android:paddingTop="5.0dip"
-                android:text="TITLE" />
+                android:text="TITLE"
+                android:textColor="#000000"/>
+
+            <ImageView
+                android:id="@+id/item_true_img"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/dummy_profile"
+                android:scaleType="fitXY" />
+
 
             <LinearLayout
                 android:id="@+id/item_true_contentsarea"
@@ -47,7 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Country" />
+                    android:text="Country"
+                    android:textColor="@color/colorPrimaryDark"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -59,7 +63,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Language" />
+                    android:text="Language"
+                    android:textColor="@color/colorPrimaryDark"/>
             </LinearLayout>
         </RelativeLayout>
 

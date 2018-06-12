@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip">
+
+        <LinearLayout
+            android:id="@+id/notice_newicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                android:background="@drawable/notice_icon_new" />
+
+            <View
+                android:layout_width="5.0dip"
+                android:layout_height="0.0dip" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_notice"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:singleLine="true" />
+
+        <View
+            android:layout_width="20.0dip"
+            android:layout_height="0.0dip" />
+
+        <ImageView
+            android:layout_width="30.0dip"
+            android:layout_height="25.0dip"
+            android:background="@drawable/notice_icon_right" />
+    </LinearLayout>
+</LinearLayout>

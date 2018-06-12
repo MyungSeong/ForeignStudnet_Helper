@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5.0dip">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xml_border_gray"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="45.0dip"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/dialog_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="청춘남녀"
+                    android:textColor="#ffffffff"
+                    android:textSize="30.0dip" />
+
+                <ImageView
+                    android:id="@+id/dialog_btn_close"
+                    android:layout_width="30.0dip"
+                    android:layout_height="30.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10.0dip"
+                    android:background="@drawable/btn_close" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="50.0dip" />
+
+            <TextView
+                android:id="@+id/dialog_msg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="가입이 완료되었습니다!\n가입된 프로필은 24시간 이내에 승인이 이루어집니다.\n\n더욱 좋은 서비스를 위하여 리뷰를 작성해주세요!"
+                android:textColor="#ffffffff" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="50.0dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:orientation="horizontal"
+                android:padding="5.0dip">
+
+                <Button
+                    android:id="@+id/dialog_btn_cancle"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/btn_join_blue"
+                    android:text="취소"
+                    android:textColor="#ffffffff" />
+
+                <View
+                    android:layout_width="5.0dip"
+                    android:layout_height="0.0dip" />
+
+                <Button
+                    android:id="@+id/dialog_btn_ok"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/btn_join_blue"
+                    android:text="열기"
+                    android:textColor="#ffffffff" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

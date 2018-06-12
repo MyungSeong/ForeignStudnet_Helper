@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0" />
+
+        <ImageView
+            android:id="@+id/dialog_btn_close"
+            android:layout_width="30.0dip"
+            android:layout_height="30.0dip"
+            android:background="@drawable/btn_close" />
+
+        <View
+            android:layout_width="10.0dip"
+            android:layout_height="0.0dip" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="연락처 확인하기"
+            android:textColor="#ffffffff"
+            android:textSize="30.0dip" />
+
+        <ImageView
+            android:layout_width="120.0dip"
+            android:layout_height="100.0dip"
+            android:background="@drawable/icon_flower" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:text="상대방과의 매칭에 성공하였습니다!\n연락처 정보는 매칭 후 48시간동안만 표시됩니다.\n좋은 인연 되시길 바랍니다."
+            android:textColor="#fff79253" />
+
+        <TextView
+            android:id="@+id/dialog_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10.0dip"
+            android:textColor="#ffffffff"
+            android:textSize="18.0dip" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:orientation="horizontal"
+        android:padding="5.0dip">
+
+        <Button
+            android:id="@+id/dialog_btn_cancle"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/btn_join_blue"
+            android:text="닫기"
+            android:textColor="#ffffffff" />
+    </LinearLayout>
+</LinearLayout>
