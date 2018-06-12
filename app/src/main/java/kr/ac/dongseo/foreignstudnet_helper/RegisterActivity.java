@@ -23,6 +23,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.io.UnsupportedEncodingException;
+
 import cz.msebera.android.httpclient.Header;
 
 public class RegisterActivity extends Activity
@@ -150,7 +152,13 @@ public class RegisterActivity extends Activity
                             }
 
                             // 서버로 전송
-                            attemptRegister();
+                            try {
+                                attemptRegister();
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
                     });
                 }
@@ -201,8 +209,7 @@ public class RegisterActivity extends Activity
         }*/
     }
 
-    private void attemptRegister()
-    {
+    private void attemptRegister() throws UnsupportedEncodingException, JSONException {
         final String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
         final String name = etName.getText().toString();

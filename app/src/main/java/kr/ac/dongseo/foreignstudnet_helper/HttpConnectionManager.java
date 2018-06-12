@@ -53,15 +53,16 @@ public class HttpConnectionManager
     //POST 회원가입
     public void register(String mail, String pw, String name, String phone, String country,
                        String language, int helper, // byte[] byteImage,
-                       JsonHttpResponseHandler handler) {
-        RequestParams params = new RequestParams();
-        params.put("mail", mail);
-        params.put("pw", pw);
-        params.put("name", name);
-        params.put("phone", phone);
-        params.put("country", country);
-        params.put("language", language);
-        params.put("helper", helper);
+                       JsonHttpResponseHandler handler) throws UnsupportedEncodingException, JSONException {
+        //RequestParams params = new RequestParams();
+        JSONObject jsonParams = new JSONObject();
+            jsonParams.put("mail", mail);
+            jsonParams.put("pw", pw);
+            jsonParams.put("name", name);
+            jsonParams.put("phone", phone);
+            jsonParams.put("country", country);
+            jsonParams.put("language", language);
+            jsonParams.put("helper", helper);
 
         /*if (byteImage != null) {
             params.put("profPic", new ByteArrayInputStream(byteImage), "profPic.PNG");
@@ -75,8 +76,9 @@ public class HttpConnectionManager
         */
 
         String registerURL = SERVER_URL + "/register";
-        client.post(registerURL, params, handler);
-        Log.d("Request Msg: ", "JSON " + params);
+        StringEntity entity = new StringEntity(jsonParams.toString());
+        client.post(context, registerURL, entity, "application/json", handler);
+        Log.d("Request Msg: ", "JSON " + jsonParams);
     }
 
     // GET 유저 정보 가져오기, using only cookies

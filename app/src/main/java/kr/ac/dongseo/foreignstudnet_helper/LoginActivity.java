@@ -31,6 +31,7 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
 
         httpConnectionManager = new HttpConnectionManager(getApplicationContext());
+        smgr = new SessionManager(getApplicationContext());
 
         etEmail = (EditText) findViewById(R.id.login_email);
         etPassword = (EditText) findViewById(R.id.login_pw);
@@ -74,7 +75,7 @@ public class LoginActivity extends Activity {
                         int success = response.getInt("success");
 
                         if (success == 1) {
-                            String email = response.getString("mail");
+                            String email = etEmail.getText().toString(); //String email = response.getString("mail");
                             String name = response.getString("name");
 
                             smgr.createSession(email, name);

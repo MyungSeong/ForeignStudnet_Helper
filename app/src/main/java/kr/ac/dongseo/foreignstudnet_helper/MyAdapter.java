@@ -113,6 +113,7 @@ public class MyAdapter extends BaseAdapter
         {
             Toast.makeText(v.getContext(), "해당 유저에게 도움을 신청하지 않았습니다",
                     Toast.LENGTH_SHORT).show();
+            mCustomDialog.dismiss();
         }
     };
 }
