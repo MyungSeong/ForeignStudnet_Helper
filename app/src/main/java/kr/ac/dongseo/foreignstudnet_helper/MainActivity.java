@@ -42,7 +42,7 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_custom);
 
         TabHost tabHost = (TabHost) findViewById(R.id.tab_host);
         tabHost.setup();
@@ -55,7 +55,7 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
 
         // Tab2 Setting
         TabSpec tabSpec2 = tabHost.newTabSpec("Tab2");
-        tabSpec2.setIndicator("도우미 리스트"); // Tab Subject
+        tabSpec2.setIndicator("이벤트 리스트"); // Tab Subject
         tabSpec2.setContent(R.id.tab_view2); // Tab Content
         tabHost.addTab(tabSpec2);
 
@@ -82,7 +82,7 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
         FragmentManager fragmentManager = getFragmentManager();
         MapFragment mapFragment = (MapFragment)fragmentManager
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        //mapFragment.getMapAsync(this);
 
         /* 세번째 탭
          *
@@ -98,7 +98,7 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
         for (int i = 0; i < 10; i++)
         {
             mMyAdapter.addItem(ContextCompat.getDrawable(
-                    getApplicationContext(), R.drawable.dummy_profile),
+                    getApplicationContext(), R.drawable.eventlist_profile),
                     "Sundar Pichai_" + i, "I need help with public affairs");
         }
 
@@ -118,7 +118,6 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
         });*/
 
         getAllMatch();
-
 
         mListView.setAdapter(mMyAdapter);
     }
@@ -147,74 +146,37 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
             httpConnectionManager.getAllMatch(new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                    /*int rows = response.getInt("rows");
-                    int index = response.getInt("0.idx");
-                    String mail = response.getString("mail");
-                    String helper = response.getString("helper");
-                    String helpee = response.getString("helpee");
-                    String title = response.getString("title");
-                    String content = response.getString("content");
-                    String state = response.getString("state");
-
-                    final String TAG = "[GET ALL MATCH LIST] ";
-
-                    Log.d(TAG, response.toString());
-
-                    Log.d(TAG, "rows:" + rows);
-                    Log.d(TAG, "index:" + index);
-                    Log.d(TAG, "mail:" + mail);
-                    Log.d(TAG, "helper:" + helper);
-                    Log.d(TAG, "helpee:" + helpee);
-                    Log.d(TAG, "title:" + title);
-                    Log.d(TAG, "content:" + content);
-                    Log.d(TAG, "state:" + state);*/
-
                     try {
+                        int rows = response.getInt("rows");
+                        int idx = 0;
+                        String helper = null;
+                        String helpee = null;
+                        String title = null;
+                        String content = null;
+                        String state = null;
 
-                        String[] arraySum = new String[20];
-                        JSONArray jsonArray = new JSONObject(response.toString()).getJSONArray("0");
-                        for (int i = 0; i < jsonArray.length(); i++)
+                        for (int i = 0; i < rows; i++)
                         {
-                            HashMap map = new HashMap<>();
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            JSONObject jsonObject = response.optJSONObject("" + i);
+                            idx = jsonObject.getInt("idx");
+                            helper = jsonObject.getString("helper");
+                            helpee = jsonObject.getString("helpee");
+                            title = jsonObject.getString("title");
+                            content = jsonObject.getString("content");
+                            state = jsonObject.getString("state");
 
-                            String idx = jsonObject.optString("idx");
-
-                            arraySum[i] = idx;
+                            Log.d(TAG, "rows:" + rows);
+                            Log.d(TAG, "[" + "Index: " + i + "] " + "idx:" + idx);
+                            Log.d(TAG, "[" + "Index: " + i + "] " + "helper:" + helper);
+                            Log.d(TAG, "[" + "Index: " + i + "] " + "helpee:" + helpee);
+                            Log.d(TAG, "[" + "Index: " + i + "] " + "title:" + title);
+                            Log.d(TAG, "[" + "Index: " + i + "] " + "content:" + content);
+                            Log.d(TAG, "[" + "Index: " + i + "] " + "state:" + state);
                         }
-
-                        Log.d(TAG, arraySum[0]);
-
-                        JSONObject jsonObject = response.optJSONObject("0");
-                        int rows = jsonObject.getInt("rows");
-                        int idx = jsonObject.getInt("idx");
-                        String helper = jsonObject.getString("helper");
-                        String helpee = jsonObject.getString("helpee");
-                        String title = jsonObject.getString("title");
-                        String content = jsonObject.getString("content");
-                        String state = jsonObject.getString("state");
-
-
-                        /*int rows = response.getInt("rows");
-                        int idx = response.getInt("idx");
-                        String helper = response.getString("helper");
-                        String helpee = response.getString("helpee");
-                        String title = response.getString("title");
-                        String content = response.getString("content");
-                        String state = response.getString("state");*/
-
-                        Log.d(TAG, "rows:" + rows);
-                        Log.d(TAG, "idx:" + idx);
-                        Log.d(TAG, "helper:" + helper);
-                        Log.d(TAG, "helpee:" + helpee);
-                        Log.d(TAG, "title:" + title);
-                        Log.d(TAG, "content:" + content);
-                        Log.d(TAG, "state:" + state);
                     } catch (JSONException e) {
                         e.printStackTrace();
                         Log.d(TAG, e.getMessage());
                     }
-
                     Log.d(TAG, response.toString());
                 }
 
