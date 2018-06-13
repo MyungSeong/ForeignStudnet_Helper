@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "project_info": {
     "project_number": "640669870139",
@@ -56,4 +57,64 @@
     }
   ],
   "configuration_version": "1"
+=======
+{
+  "project_info": {
+    "project_number": "640669870139",
+    "firebase_url": "https://foreignstudnethelper.firebaseio.com",
+    "project_id": "foreignstudnethelper",
+    "storage_bucket": "foreignstudnethelper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640669870139:android:9c0c8a9dc9b0e893",
+        "android_client_info": {
+          "package_name": "kr.ac.dongseo.foreignstudnet_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640669870139-80tdjl9olgkjgi8f5j4dfgf1e5on4iv8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.ac.dongseo.foreignstudnet_helper",
+            "certificate_hash": "aecd50bc4b255d68d933dc2604e884c2f28de976"
+          }
+        },
+        {
+          "client_id": "640669870139-358ab311v03iqg1dl4pnfddg11nuq9uk.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "640669870139-358ab311v03iqg1dl4pnfddg11nuq9uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdn_1xHYNGzACA2py4O2qkclAhbTDgLrI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640669870139-358ab311v03iqg1dl4pnfddg11nuq9uk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+>>>>>>> origin/master
 }
