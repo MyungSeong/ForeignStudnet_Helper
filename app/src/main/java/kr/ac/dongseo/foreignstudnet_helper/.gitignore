@@ -66,3 +66,6 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
+# libs
+libs/android-async-http-1.4.9.jar
+libs/httpclient-4.4.1.1.jar
