@@ -24,12 +24,12 @@
                 android:paddingLeft="10.0dip"
                 android:paddingTop="5.0dip"
                 android:text="TITLE"
-                android:textColor="#000000"/>
+                android:textColor="#f0f0f0"/>
 
             <ImageView
                 android:id="@+id/item_decide_img"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_centerVertical="true"
                 android:layout_centerInParent="true"
                 android:background="@drawable/dummy_profile"
@@ -50,12 +50,13 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="Country"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="#f0f0f0"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" / " />
+                    android:text=" / "
+                    android:textColor="#f0f0f0"/>
 
                 <TextView
                     android:id="@+id/item_decide_language"
@@ -63,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="Language"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:textColor="#f0f0f0"/>
             </LinearLayout>
         </RelativeLayout>
 

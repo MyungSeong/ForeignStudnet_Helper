@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
 
 import org.json.JSONException;
@@ -12,8 +13,11 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import cz.msebera.android.httpclient.HttpClientConnection;
+import cz.msebera.android.httpclient.NameValuePair;
 import cz.msebera.android.httpclient.client.HttpClient;
 import cz.msebera.android.httpclient.entity.StringEntity;
 
@@ -28,7 +32,7 @@ public class HttpConnectionManager
     public HttpConnectionManager(Context context) {
         this.context = context;
         smgr = new SessionManager(context);
-        client.setTimeout(50000);
+        //client.setTimeout(50000);
     }
 
     //POST 로그인
@@ -39,7 +43,7 @@ public class HttpConnectionManager
         String loginURL = SERVER_URL + "/login";
         StringEntity entity = new StringEntity(jsonParams.toString());
         client.post(context, loginURL, entity, "application/json", handler);
-        Log.d("Request Msg: ", "JSON " + jsonParams);
+        Log.d("[Request Msg] ", "JSON " + jsonParams);
 
         /*RequestParams params = new RequestParams();
         params.put("mail", mail);
@@ -56,13 +60,13 @@ public class HttpConnectionManager
                        JsonHttpResponseHandler handler) throws UnsupportedEncodingException, JSONException {
         //RequestParams params = new RequestParams();
         JSONObject jsonParams = new JSONObject();
-            jsonParams.put("mail", mail);
-            jsonParams.put("pw", pw);
-            jsonParams.put("name", name);
-            jsonParams.put("phone", phone);
-            jsonParams.put("country", country);
-            jsonParams.put("language", language);
-            jsonParams.put("helper", helper);
+        jsonParams.put("mail", mail);
+        jsonParams.put("pw", pw);
+        jsonParams.put("name", name);
+        jsonParams.put("phone", phone);
+        jsonParams.put("country", country);
+        jsonParams.put("language", language);
+        jsonParams.put("helper", helper);
 
         /*if (byteImage != null) {
             params.put("profPic", new ByteArrayInputStream(byteImage), "profPic.PNG");
@@ -78,7 +82,7 @@ public class HttpConnectionManager
         String registerURL = SERVER_URL + "/register";
         StringEntity entity = new StringEntity(jsonParams.toString());
         client.post(context, registerURL, entity, "application/json", handler);
-        Log.d("Request Msg: ", "JSON " + jsonParams);
+        Log.d("[Request Msg] ", "JSON " + jsonParams);
     }
 
     // GET 유저 정보 가져오기, using only cookies
@@ -127,57 +131,73 @@ public class HttpConnectionManager
 
     // POST 매칭 신청
     public void requestMatch(String mail, String title, String content,
-                             JsonHttpResponseHandler handler) {
-        RequestParams params = new RequestParams();
-        params.put("mail", mail);
-        params.put("title", title);
-        params.put("content", content);
-        client.setCookieStore(smgr.myCookies);
+                             JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonParams = new JSONObject();
+        jsonParams.put("mail", mail);
+        jsonParams.put("title", title);
+        jsonParams.put("content", content);
         String requestMatchURL = SERVER_URL + "/reqmatch";
-        client.post(requestMatchURL, params, handler);
-        Log.d("Request Msg: ", "JSON " + params);
+        client.setCookieStore(smgr.myCookies);
+        StringEntity entity = new StringEntity(jsonParams.toString());
+        client.post(context, requestMatchURL, entity, "application/json", handler);
+        Log.d("[Request Msg] ", "JSON " + jsonParams);
     }
 
     // GET 현재 유저의 매치 정보 수신 (using mail)
-    public void getUserMatch(String mail, JsonHttpResponseHandler handler) {
-        RequestParams params = new RequestParams();
-        params.put("mail", mail);
+    public void getUserMatch(String mail, JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonParams = new JSONObject();
+        jsonParams.put("mail", mail);
         String getUserMatchURL = SERVER_URL + "/mylist";
         client.setCookieStore(smgr.myCookies);
-        client.get(getUserMatchURL, handler);
-        Log.d("Request Msg: ", "JSON " + params);
+        StringEntity entity = new StringEntity(jsonParams.toString());
+        client.post(context, getUserMatchURL, entity, "application/json", handler);
+        Log.d("[Request Msg] ", "JSON " + jsonParams);
     }
 
     // GET 모든 대기중인 매칭 리스트 수신
-    public void getAllMatch(JsonHttpResponseHandler handler) {
-        RequestParams params = new RequestParams();
+    public void getAllMatch(JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonParams = new JSONObject();
         String getAllMatchURL = SERVER_URL + "/list";
         client.setCookieStore(smgr.myCookies);
+
         client.get(getAllMatchURL, handler);
-        Log.d("Request Msg: ", "JSON " + params);
+        /*jsonParams.get("rows");
+        jsonParams.get("idx");
+        jsonParams.get("mail");
+        jsonParams.get("helper");
+        jsonParams.get("helpee");
+        jsonParams.get("title");
+        jsonParams.get("content");
+        jsonParams.get("state");
+
+        StringEntity entity = new StringEntity(jsonParams.toString());
+        client.get(context, getAllMatchURL, entity, "application/json", handler);*/
+        Log.d("[Request Msg] ", "JSON " + jsonParams);
     }
 
     // POST 매칭 종료 (헬퍼가 매칭 종료)
     public void deleteMatch(String helperMail, String helperMatchId,
-                            JsonHttpResponseHandler handler) {
-        RequestParams params = new RequestParams();
-        params.put("mail", helperMail);
-        params.put("id", helperMatchId);
+                            JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonParams = new JSONObject();
+        jsonParams.put("mail", helperMail);
+        jsonParams.put("id", helperMatchId);
         String quitMatchURL = SERVER_URL + "/endmatch";
         client.setCookieStore(smgr.myCookies);
-        client.post(quitMatchURL, params, handler);
-        Log.d("Request Msg: ", "JSON " + params);
+        StringEntity entity = new StringEntity(jsonParams.toString());
+        client.post(context, quitMatchURL, entity, "application/json", handler);
+        Log.d("[Request Msg] ", "JSON " + jsonParams);
     }
 
     // POST 매칭 결정 (수락 / 거절)
-    public void decideMatch(String mail, int eventIdx, JsonHttpResponseHandler handler) {
-        RequestParams params = new RequestParams();
-        params.put("mail", mail);
-        params.put("num", eventIdx);
+    public void decideMatch(String mail, int eventIdx, JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+        JSONObject jsonParams = new JSONObject();
+        jsonParams.put("mail", mail);
+        jsonParams.put("num", eventIdx);
         String decideMatchURL = SERVER_URL + "/resmatch";
         client.setCookieStore(smgr.myCookies);
-        client.post(decideMatchURL, params, handler);
-        Log.d("Request Msg: ", "JSON " + params);
+        StringEntity entity = new StringEntity(jsonParams.toString());
+        client.post(context, decideMatchURL, entity, "application/json", handler);
+        Log.d("[Request Msg] ", "JSON " + jsonParams);
     }
 
     /*

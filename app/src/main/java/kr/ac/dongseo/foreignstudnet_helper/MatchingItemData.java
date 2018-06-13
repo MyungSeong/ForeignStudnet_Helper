@@ -12,28 +12,23 @@ public class MatchingItemData
         return icon;
     }
 
-    public void setIcon(Drawable icon)
-    {
+    public void setIcon(Drawable icon) {
         this.icon = icon;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getContents()
-    {
+    public String getContents() {
         return contents;
     }
 
-    public void setContents(String contents)
-    {
+    public void setContents(String contents) {
         this.contents = contents;
     }
 }

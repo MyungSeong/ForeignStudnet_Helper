@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="10dp"
-        android:background="?attr/colorPrimaryDark">
+        android:background="@color/colorPrimaryDark">
 
         <ImageView
             android:id="@+id/toolbar_login_image"
@@ -38,12 +38,25 @@
         android:visibility="gone" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:id="@+id/login_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/logo_2_1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/login_logo"
+        android:layout_marginTop="65dp"
+        android:text="HELPER"
+        android:textColor="#e9483a"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:background="@drawable/textview_rect" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -85,8 +98,16 @@
             android:layout_marginLeft="5dp"
             android:layout_toEndOf="@+id/login_email"
             android:background="@color/colorPrimaryDark"
-            android:text="Login"
-            android:textColor="#ffffff" />
+            android:textColor="#f0f0f0"
+            android:text="Login" />
+
+        <CheckBox
+            android:id="@+id/login_remeber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그인 저장"
+            android:textColor="#A7B7C2"
+            android:layout_below="@+id/login_btn" />
     </RelativeLayout>
 
 

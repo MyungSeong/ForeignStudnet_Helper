@@ -2,10 +2,12 @@ package kr.ac.dongseo.foreignstudnet_helper;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,9 +23,15 @@ import cz.msebera.android.httpclient.Header;
 public class LoginActivity extends Activity {
     private SessionManager smgr;
     private HttpConnectionManager httpConnectionManager;
+    private SharedPreferences sharedPreferences;
 
     EditText etEmail;
     EditText etPassword;
+    CheckBox cbLoginRemember;
+
+    boolean saveLoginData;
+    String email;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +40,19 @@ public class LoginActivity extends Activity {
 
         httpConnectionManager = new HttpConnectionManager(getApplicationContext());
         smgr = new SessionManager(getApplicationContext());
+        sharedPreferences = getSharedPreferences("appData", MODE_PRIVATE);
 
         etEmail = (EditText) findViewById(R.id.login_email);
         etPassword = (EditText) findViewById(R.id.login_pw);
+        cbLoginRemember = (CheckBox) findViewById(R.id.login_remeber);
+
+        loadLoginPerf();
+
+        if (saveLoginData) {
+            etEmail.setText(email);
+            etPassword.setText(password);
+            cbLoginRemember.setChecked(saveLoginData);
+        }
 
         Button loginButton = (Button) findViewById(R.id.login_btn);
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +97,7 @@ public class LoginActivity extends Activity {
                             String name = response.getString("name");
 
                             smgr.createSession(email, name);
+                            saveLoginPref();
                             Intent intent = new Intent(getBaseContext(), MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -119,5 +138,21 @@ public class LoginActivity extends Activity {
                 }
             });
         }
+    }
+
+    private void saveLoginPref() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean("SAVE_LOGIN_DATA", cbLoginRemember.isChecked());
+        editor.putString("EMAIL", etEmail.getText().toString().trim());
+        editor.putString("PASSWORD", etPassword.getText().toString().trim());
+
+        editor.apply();
+    }
+
+    private void loadLoginPerf() {
+        saveLoginData = sharedPreferences.getBoolean("SAVE_LOGIN_DATA", false);
+        email = sharedPreferences.getString("EMAIL", "");
+        password = sharedPreferences.getString("PASSWORD", "");
     }
 }

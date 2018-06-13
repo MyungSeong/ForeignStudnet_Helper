@@ -52,6 +52,7 @@ public class MyAdapter extends BaseAdapter
         MatchingItemData matchingItemData = getItem(position);
 
         ivImg.setImageDrawable(matchingItemData.getIcon());
+        ivImg.setScaleType(ImageView.ScaleType.FIT_XY);
         tvName.setText(matchingItemData.getName());
         tvContents.setText(matchingItemData.getContents());
 
