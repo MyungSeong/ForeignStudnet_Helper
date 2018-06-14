@@ -54,6 +54,33 @@
                 android:layout_height="fill_parent"
                 android:orientation="vertical">
 
+                <ListView
+                    android:id="@+id/matchingSearch_myList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab_view2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/matchingSearch_listItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab_view3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -130,30 +157,7 @@
                     android:background="@color/colorPrimaryDark"
                     android:text="Send"
                     android:textColor="#ffffff" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/tab_view2"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical">
-
-            <ListView
-                android:id="@+id/matchingSearch_listItem"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/tab_view3"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical">
-
-
+                <!--
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -264,9 +268,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10" />
-                </LinearLayout>
+                </LinearLayout>-->
             </LinearLayout>
-
         </FrameLayout>
     </TabHost>
 </LinearLayout>

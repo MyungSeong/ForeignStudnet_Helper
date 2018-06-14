@@ -56,7 +56,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
      *
      * @param token The new token.
      */
-    public static final String SERVER_URL = "http://104.198.117.85:3333";
+    public static final String SERVER_URL = "http://104.198.117.85";
 
     private static AsyncHttpClient client = new AsyncHttpClient();
     private Context context;
@@ -72,7 +72,6 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
                 .url(SERVER_URL + "/foreignHelp/register.php")
                 .post(body)
                 .build();
-
         try {
             client.newCall(request).execute();
         } catch (IOException e) {

@@ -10,18 +10,18 @@
         android:id="@+id/item_view_true"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/textview_rect">
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="250.0dip">
+            android:layout_height="300.0dip">
 
             <TextView
                 android:id="@+id/item_true_title"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingLeft="10.0dip"
                 android:paddingTop="5.0dip"
                 android:text="TITLE"
                 android:textColor="#f0f0f0"/>
@@ -37,10 +37,28 @@
 
 
             <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:paddingTop="30dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/item_true_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="CONTENT"
+                    android:textColor="#f0f0f0"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/item_true_contentsarea"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:paddingBottom="20dp"
                 android:layout_centerHorizontal="true"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
@@ -50,23 +68,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Country"
+                    android:text="Title"
                     android:textColor="#f0f0f0"/>
+            </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" / "
-                    android:textColor="#f0f0f0"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/item_true_contentsarea"
+                android:layout_marginTop="20dp"
+
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/item_true_language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Language"
+                    android:text="Content"
                     android:textColor="#f0f0f0"/>
             </LinearLayout>
+
         </RelativeLayout>
 
         <LinearLayout
@@ -74,7 +97,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:paddingTop="20.0dip">
+            android:layout_marginTop="70.0dip">
 
             <Button
                 android:id="@+id/item_true_ok"
@@ -92,5 +115,12 @@
                 android:layout_height="50.0dip"
                 android:background="@drawable/button_nope" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_true_eventIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INDEX"
+            android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>

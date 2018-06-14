@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -81,7 +82,7 @@ public class LoginActivity extends Activity {
 
     private void attemptLogin() throws UnsupportedEncodingException, JSONException {
         String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
+        final String password = etPassword.getText().toString();
 
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
             //showProgess(true);
@@ -95,9 +96,14 @@ public class LoginActivity extends Activity {
                         if (success == 1) {
                             String email = etEmail.getText().toString(); //String email = response.getString("mail");
                             String name = response.getString("name");
+                            String phone = response.getString("phone");
+                            String country = response.getString("country");
+                            String language = response.getString("language");
+                            int isHelper = response.getInt("helper");
 
                             smgr.createSession(email, name);
                             saveLoginPref();
+                            saveMemberData(email, name, phone, country, language, isHelper);
                             Intent intent = new Intent(getBaseContext(), MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -137,6 +143,10 @@ public class LoginActivity extends Activity {
                     super.onFailure(statusCode, headers, throwable, errorResponse);
                 }
             });
+        } else {
+            Toast.makeText(getApplicationContext(),
+                    "빈 칸이 있는지 확인해주세요",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -154,5 +164,17 @@ public class LoginActivity extends Activity {
         saveLoginData = sharedPreferences.getBoolean("SAVE_LOGIN_DATA", false);
         email = sharedPreferences.getString("EMAIL", "");
         password = sharedPreferences.getString("PASSWORD", "");
+    }
+
+    private void saveMemberData(String email, String name, String phone,
+                                String country, String language, int isHelper) {
+        //MemberData memberData = (MemberData) getApplication();
+        MemberData memberData = MemberData.getInstance();
+        memberData.setEmail(email);
+        memberData.setName(name);
+        memberData.setPhone(phone);
+        memberData.setCountry(country);
+        memberData.setLanguage(language);
+        memberData.setIsHelper(isHelper);
     }
 }

@@ -131,11 +131,15 @@ public class HttpConnectionManager
 
     // POST 매칭 신청
     public void requestMatch(String mail, String title, String content,
+                             String helpeePhone, String latitude, String longitude,
                              JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
         JSONObject jsonParams = new JSONObject();
         jsonParams.put("mail", mail);
         jsonParams.put("title", title);
         jsonParams.put("content", content);
+        jsonParams.put("helpeePhone", helpeePhone);
+        jsonParams.put("latitude", latitude);
+        jsonParams.put("longitude", longitude);
         String requestMatchURL = SERVER_URL + "/reqmatch";
         client.setCookieStore(smgr.myCookies);
         StringEntity entity = new StringEntity(jsonParams.toString());
@@ -144,9 +148,10 @@ public class HttpConnectionManager
     }
 
     // GET 현재 유저의 매치 정보 수신 (using mail)
-    public void getUserMatch(String mail, JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+    public void getUserMatch(String mail, int helper, JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
         JSONObject jsonParams = new JSONObject();
         jsonParams.put("mail", mail);
+        jsonParams.put("helper", helper);
         String getUserMatchURL = SERVER_URL + "/mylist";
         client.setCookieStore(smgr.myCookies);
         StringEntity entity = new StringEntity(jsonParams.toString());
@@ -176,7 +181,7 @@ public class HttpConnectionManager
     }
 
     // POST 매칭 종료 (헬퍼가 매칭 종료)
-    public void deleteMatch(String helperMail, String helperMatchId,
+    public void completeMatch(String helperMail, int helperMatchId,
                             JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
         JSONObject jsonParams = new JSONObject();
         jsonParams.put("mail", helperMail);
@@ -189,10 +194,12 @@ public class HttpConnectionManager
     }
 
     // POST 매칭 결정 (수락 / 거절)
-    public void decideMatch(String mail, int eventIdx, JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
+    public void decideMatch(String mail, int eventIdx, String helperPhone,
+                            JsonHttpResponseHandler handler) throws JSONException, UnsupportedEncodingException {
         JSONObject jsonParams = new JSONObject();
         jsonParams.put("mail", mail);
         jsonParams.put("num", eventIdx);
+        jsonParams.put("helperPhone", helperPhone);
         String decideMatchURL = SERVER_URL + "/resmatch";
         client.setCookieStore(smgr.myCookies);
         StringEntity entity = new StringEntity(jsonParams.toString());

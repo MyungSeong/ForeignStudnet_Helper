@@ -239,7 +239,7 @@ public class RegisterActivity extends Activity
                             if (success == 1) {
                                 smgr.createSession(email, name);
                                 Intent intent = new Intent(getApplicationContext(),
-                                        MainActivity.class);
+                                        LoginActivity.class);
                                 startActivity(intent);
                                 finish();
                             } else {
