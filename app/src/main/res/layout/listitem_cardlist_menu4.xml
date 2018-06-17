@@ -102,14 +102,7 @@
                         android:id="@id/btn_send"
                         android:layout_width="120.0dip"
                         android:layout_height="35.0dip"
-                        android:background="@drawable/main_4_btn_resend" />
-
-                    <Button
-                        android:id="@+id/btn_phone"
-                        android:layout_width="120.0dip"
-                        android:layout_height="35.0dip"
-                        android:background="@drawable/main_3_btn_phone"
-                        android:visibility="gone" />
+                        android:background="@drawable/textview_rect" />
 
                     <View
                         android:layout_width="3.0dip"
@@ -120,7 +113,7 @@
                         android:id="@id/btn_detail"
                         android:layout_width="120.0dip"
                         android:layout_height="35.0dip"
-                        android:background="@drawable/main_3_btn_profile" />
+                        android:background="@drawable/textview_rect" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

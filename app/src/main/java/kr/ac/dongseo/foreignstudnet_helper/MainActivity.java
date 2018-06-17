@@ -157,7 +157,13 @@ public class MainActivity extends Activity implements ActivityAdapterInterface {
 
                     GPSManager gpsManager = new GPSManager(MainActivity.this);
 
-                    if (!isPermission) {
+                    latitude = gpsManager.getLatitude();
+                    longitude = gpsManager.getLongitude();
+
+                    memberDataInst.setLatitude(String.valueOf(latitude));
+                    memberDataInst.setLongitude(String.valueOf(longitude));
+
+                    /*if (!isPermission) {
                         callPermission();
                         return;
                     }
@@ -173,7 +179,7 @@ public class MainActivity extends Activity implements ActivityAdapterInterface {
                         Log.d("GPS DATA", "LONGITUDE: " + longitude);
                     } else {
                         gpsManager.showSettingsAlert();
-                    }
+                    }*/
 
                     httpConnectionManager.requestMatch(
                             memberDataInst.getEmail(),

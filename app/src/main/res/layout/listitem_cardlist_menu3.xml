@@ -81,7 +81,7 @@
                         android:id="@+id/txt_title"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="닉네임/나이"
+                        android:text="이름"
                         android:textColor="#ff909090"
                         android:textSize="20.0dip" />
 
@@ -90,7 +90,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="5.0dip"
-                        android:text="지역정보"
+                        android:text="정보"
                         android:textColor="#ff909090"
                         android:textSize="20.0dip" />
                 </LinearLayout>
@@ -106,7 +106,7 @@
                         android:id="@+id/btn_send"
                         android:layout_width="120.0dip"
                         android:layout_height="35.0dip"
-                        android:background="@drawable/main_3_btn_send" />
+                        android:background="@drawable/textview_rect" />
 
                     <View
                         android:layout_width="3.0dip"
@@ -117,7 +117,7 @@
                         android:id="@+id/btn_detail"
                         android:layout_width="120.0dip"
                         android:layout_height="35.0dip"
-                        android:background="@drawable/main_3_btn_profile" />
+                        android:background="@drawable/textview_rect" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
