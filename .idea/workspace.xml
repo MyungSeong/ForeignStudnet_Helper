@@ -10,7 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MainActivity.java" line="418" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MainActivity.java" line="412" />
     <bookmark url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" line="124" />
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/HttpConnectionManager.java" line="38" />
   </component>
@@ -25,17 +25,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/GPSManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/GPSManager.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_joincomplete.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_notice.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_nowcard.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_phone.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_review.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_rosesend.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listitem_cardlist_menu1.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/listitem_cardlist_menu1.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listitem_cardlist_menu3.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/listitem_cardlist_menu3.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listitem_cardlist_menu4.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/listitem_cardlist_menu4.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listitem_chatwatting.xml" afterPath="" />
     </list>
     <ignored path="api명세서.txt" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,13 +63,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="298">
+              <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
               <folding>
-                <element signature="e#23367#23368#0" expanded="true" />
-                <element signature="e#23397#23398#0" expanded="true" />
-                <element signature="e#23451#23452#0" expanded="true" />
-                <element signature="e#23483#23484#0" expanded="true" />
+                <element signature="e#23095#23096#0" expanded="true" />
+                <element signature="e#23125#23126#0" expanded="true" />
+                <element signature="e#23179#23180#0" expanded="true" />
+                <element signature="e#23211#23212#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,24 +85,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchingItemData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MatchingItemData.java">
+      <file leaf-file-name="GPSManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/GPSManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="61" column="74" lean-forward="false" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
+            <state relative-caret-position="330">
+              <caret line="162" column="38" lean-forward="false" selection-start-line="162" selection-start-column="38" selection-end-line="162" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_custom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_custom.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="MatchingItemData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MatchingItemData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="59" column="56" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+            <state relative-caret-position="735">
+              <caret line="61" column="74" lean-forward="false" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -2313,7 +2301,6 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/CustomDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/HttpConnectionManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/GPSManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MatchingItemData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/SplashActivity.java" />
@@ -2323,6 +2310,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/listitem_cardlist_menu4.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MemberData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/GPSManager.java" />
       </list>
     </option>
   </component>
@@ -2682,12 +2670,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528955474476</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="180617">
+      <created>1529216057615</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1529216057615</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2705,7 +2699,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17643923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31145832" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31145832" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980502" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2754,7 +2748,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="180612" />
-    <option name="LAST_COMMIT_MESSAGE" value="180612" />
+    <MESSAGE value="180617" />
+    <option name="LAST_COMMIT_MESSAGE" value="180617" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2921,20 +2916,6 @@
         <state relative-caret-position="435">
           <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/GPSManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4764#4765#0" expanded="false" />
-            <element signature="e#4805#4806#0" expanded="false" />
-            <element signature="e#5907#5908#0" expanded="false" />
-            <element signature="e#5934#5935#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3233,15 +3214,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/GPSManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="162" column="38" lean-forward="false" selection-start-line="162" selection-start-column="38" selection-end-line="162" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kr/ac/dongseo/foreignstudnet_helper/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="298">
+          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
-            <element signature="e#23367#23368#0" expanded="true" />
-            <element signature="e#23397#23398#0" expanded="true" />
-            <element signature="e#23451#23452#0" expanded="true" />
-            <element signature="e#23483#23484#0" expanded="true" />
+            <element signature="e#23095#23096#0" expanded="true" />
+            <element signature="e#23125#23126#0" expanded="true" />
+            <element signature="e#23179#23180#0" expanded="true" />
+            <element signature="e#23211#23212#0" expanded="true" />
           </folding>
         </state>
       </provider>

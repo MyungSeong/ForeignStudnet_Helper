@@ -160,8 +160,8 @@ public class GPSManager extends Service implements LocationListener {
     public void showSettingsAlert(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 
-        alertDialog.setTitle("위치 권한 설정");
-        alertDialog.setMessage("위치 설정이 되지 않았을 수 도 있습니다. \n 설정 창으로 가시겠습니까?");
+        alertDialog.setTitle("위치 설정");
+        alertDialog.setMessage("위치를 받아오지 못했습니다\n 설정 창으로 가시겠습니까?");
 
         // OK 를 누르게 되면 설정창으로 이동합니다.
         alertDialog.setPositiveButton("Settings",
